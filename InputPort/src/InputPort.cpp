@@ -13,9 +13,9 @@ int main()
 
     while (1)
     {
-        if (sender.SampleProcessTargetProxy->isAvailable())
+        if (sender.SampleProcess0TargetProxy->isAvailable())
         {
-            sender.SampleProcessTargetProxy->setInput(value, sender.callStatus, sender.returnMessage);
+            sender.SampleProcess0TargetProxy->setInput(value, sender.callStatus, sender.returnMessage);
             
             if (sender.returnMessage != "")
             {

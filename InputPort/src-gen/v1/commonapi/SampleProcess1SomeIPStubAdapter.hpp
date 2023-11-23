@@ -7,10 +7,10 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/.
  */
-#ifndef V1_COMMONAPI_SAMPLE_PROCESS_SOMEIP_STUB_ADAPTER_HPP_
-#define V1_COMMONAPI_SAMPLE_PROCESS_SOMEIP_STUB_ADAPTER_HPP_
+#ifndef V1_COMMONAPI_SAMPLE_PROCESS1_SOMEIP_STUB_ADAPTER_HPP_
+#define V1_COMMONAPI_SAMPLE_PROCESS1_SOMEIP_STUB_ADAPTER_HPP_
 
-#include <v1/commonapi/SampleProcessStub.hpp>
+#include <v1/commonapi/SampleProcess1Stub.hpp>
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
 #define COMMONAPI_INTERNAL_COMPILATION
@@ -32,54 +32,54 @@
 namespace v1 {
 namespace commonapi {
 
-template <typename _Stub = ::v1::commonapi::SampleProcessStub, typename... _Stubs>
-class SampleProcessSomeIPStubAdapterInternal
-    : public virtual SampleProcessStubAdapter,
+template <typename _Stub = ::v1::commonapi::SampleProcess1Stub, typename... _Stubs>
+class SampleProcess1SomeIPStubAdapterInternal
+    : public virtual SampleProcess1StubAdapter,
       public CommonAPI::SomeIP::StubAdapterHelper< _Stub, _Stubs...>,
-      public std::enable_shared_from_this< SampleProcessSomeIPStubAdapterInternal<_Stub, _Stubs...>>
+      public std::enable_shared_from_this< SampleProcess1SomeIPStubAdapterInternal<_Stub, _Stubs...>>
 {
 public:
-    typedef CommonAPI::SomeIP::StubAdapterHelper< _Stub, _Stubs...> SampleProcessSomeIPStubAdapterHelper;
+    typedef CommonAPI::SomeIP::StubAdapterHelper< _Stub, _Stubs...> SampleProcess1SomeIPStubAdapterHelper;
 
-    ~SampleProcessSomeIPStubAdapterInternal() {
+    ~SampleProcess1SomeIPStubAdapterInternal() {
         deactivateManagedInstances();
-        SampleProcessSomeIPStubAdapterHelper::deinit();
+        SampleProcess1SomeIPStubAdapterHelper::deinit();
     }
 
     void deactivateManagedInstances() {}
     
     CommonAPI::SomeIP::GetAttributeStubDispatcher<
-        ::v1::commonapi::SampleProcessStub,
+        ::v1::commonapi::SampleProcess1Stub,
         CommonAPI::Version
-    > getSampleProcessInterfaceVersionStubDispatcher;
+    > getSampleProcess1InterfaceVersionStubDispatcher;
 
     CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
-        ::v1::commonapi::SampleProcessStub,
+        ::v1::commonapi::SampleProcess1Stub,
         std::tuple< uint8_t>,
         std::tuple< std::string>,
         std::tuple< CommonAPI::SomeIP::IntegerDeployment<uint8_t>>,
         std::tuple< CommonAPI::SomeIP::StringDeployment>
     > setInputStubDispatcher;
     
-    SampleProcessSomeIPStubAdapterInternal(
+    SampleProcess1SomeIPStubAdapterInternal(
         const CommonAPI::SomeIP::Address &_address,
         const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
         const std::shared_ptr<CommonAPI::StubBase> &_stub):
         CommonAPI::SomeIP::StubAdapter(_address, _connection),
-        SampleProcessSomeIPStubAdapterHelper(
+        SampleProcess1SomeIPStubAdapterHelper(
             _address,
             _connection,
-            std::dynamic_pointer_cast< SampleProcessStub>(_stub)),
-        getSampleProcessInterfaceVersionStubDispatcher(&SampleProcessStub::lockInterfaceVersionAttribute, &SampleProcessStub::getInterfaceVersion, false, true),
+            std::dynamic_pointer_cast< SampleProcess1Stub>(_stub)),
+        getSampleProcess1InterfaceVersionStubDispatcher(&SampleProcess1Stub::lockInterfaceVersionAttribute, &SampleProcess1Stub::getInterfaceVersion, false, true),
         setInputStubDispatcher(
-            &SampleProcessStub::setInput,
+            &SampleProcess1Stub::setInput,
             false,
             _stub->hasElement(0),
             std::make_tuple(static_cast< CommonAPI::SomeIP::IntegerDeployment<uint8_t>* >(nullptr)),
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
     {
-        SampleProcessSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x65) }, &setInputStubDispatcher );
+        SampleProcess1SomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x65) }, &setInputStubDispatcher );
         // Provided events/fields
     }
 
@@ -91,26 +91,26 @@ public:
 
 
 template <typename _Stub, typename... _Stubs>
-void SampleProcessSomeIPStubAdapterInternal<_Stub, _Stubs...>::registerSelectiveEventHandlers() {
+void SampleProcess1SomeIPStubAdapterInternal<_Stub, _Stubs...>::registerSelectiveEventHandlers() {
 }
 
 template <typename _Stub, typename... _Stubs>
-void SampleProcessSomeIPStubAdapterInternal<_Stub, _Stubs...>::unregisterSelectiveEventHandlers() {
+void SampleProcess1SomeIPStubAdapterInternal<_Stub, _Stubs...>::unregisterSelectiveEventHandlers() {
 }
 
-template <typename _Stub = ::v1::commonapi::SampleProcessStub, typename... _Stubs>
-class SampleProcessSomeIPStubAdapter
-    : public SampleProcessSomeIPStubAdapterInternal<_Stub, _Stubs...> {
+template <typename _Stub = ::v1::commonapi::SampleProcess1Stub, typename... _Stubs>
+class SampleProcess1SomeIPStubAdapter
+    : public SampleProcess1SomeIPStubAdapterInternal<_Stub, _Stubs...> {
 public:
-    SampleProcessSomeIPStubAdapter(const CommonAPI::SomeIP::Address &_address,
+    SampleProcess1SomeIPStubAdapter(const CommonAPI::SomeIP::Address &_address,
                                             const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
                                             const std::shared_ptr<CommonAPI::StubBase> &_stub)
         : CommonAPI::SomeIP::StubAdapter(_address, _connection),
-          SampleProcessSomeIPStubAdapterInternal<_Stub, _Stubs...>(_address, _connection, _stub) {
+          SampleProcess1SomeIPStubAdapterInternal<_Stub, _Stubs...>(_address, _connection, _stub) {
     }
 };
 
 } // namespace commonapi
 } // namespace v1
 
-#endif // V1_COMMONAPI_Sample_Process_SOMEIP_STUB_ADAPTER_HPP_
+#endif // V1_COMMONAPI_Sample_Process1_SOMEIP_STUB_ADAPTER_HPP_

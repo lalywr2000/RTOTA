@@ -8,8 +8,8 @@
  * http://mozilla.org/MPL/2.0/.
  */
 
-#ifndef V1_COMMONAPI_Sample_Process_SOMEIP_DEPLOYMENT_HPP_
-#define V1_COMMONAPI_Sample_Process_SOMEIP_DEPLOYMENT_HPP_
+#ifndef V1_COMMONAPI_Sample_Process1_SOMEIP_DEPLOYMENT_HPP_
+#define V1_COMMONAPI_Sample_Process1_SOMEIP_DEPLOYMENT_HPP_
 
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
@@ -24,7 +24,7 @@
 
 namespace v1 {
 namespace commonapi {
-namespace SampleProcess_ {
+namespace SampleProcess1_ {
 
 // Interface-specific deployment types
 
@@ -36,8 +36,8 @@ namespace SampleProcess_ {
 
 // Broadcast-specific deployments
 
-} // namespace SampleProcess_
+} // namespace SampleProcess1_
 } // namespace commonapi
 } // namespace v1
 
-#endif // V1_COMMONAPI_Sample_Process_SOMEIP_DEPLOYMENT_HPP_
+#endif // V1_COMMONAPI_Sample_Process1_SOMEIP_DEPLOYMENT_HPP_
