@@ -28,7 +28,9 @@ add_executable(SampleProcess
         src/SampleProcessSenderClass.cpp
         src-gen/v1/commonapi/OutputPortSomeIPProxy.cpp
         src-gen/v1/commonapi/OutputPortSomeIPDeployment.cpp
-        src-gen/v1/commonapi/SampleProcessSomeIPStubAdapter.cpp
-        src-gen/v1/commonapi/SampleProcessSomeIPDeployment.cpp
+        src-gen/v1/commonapi/SampleProcess0SomeIPStubAdapter.cpp
+        src-gen/v1/commonapi/SampleProcess0SomeIPDeployment.cpp
+        src-gen/v1/commonapi/SampleProcess1SomeIPStubAdapter.cpp
+        src-gen/v1/commonapi/SampleProcess1SomeIPDeployment.cpp
 )
 target_link_libraries(SampleProcess CommonAPI CommonAPI-SomeIP vsomeip3)

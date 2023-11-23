@@ -7,11 +7,11 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/.
  */
-#include <v1/commonapi/SampleProcessSomeIPDeployment.hpp>
+#include <v1/commonapi/SampleProcess1SomeIPDeployment.hpp>
 
 namespace v1 {
 namespace commonapi {
-namespace SampleProcess_ {
+namespace SampleProcess1_ {
 
 // Type-specific deployments
 
@@ -21,6 +21,6 @@ namespace SampleProcess_ {
 
 // Broadcast-specific deployments
 
-} // namespace SampleProcess_
+} // namespace SampleProcess1_
 } // namespace commonapi
 } // namespace v1

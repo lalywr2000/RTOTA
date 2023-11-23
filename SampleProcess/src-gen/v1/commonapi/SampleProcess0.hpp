@@ -7,8 +7,8 @@
 * If a copy of the MPL was not distributed with this file, You can obtain one at
 * http://mozilla.org/MPL/2.0/.
 */
-#ifndef V1_COMMONAPI_SAMPLE_PROCESS_HPP_
-#define V1_COMMONAPI_SAMPLE_PROCESS_HPP_
+#ifndef V1_COMMONAPI_SAMPLE_PROCESS0_HPP_
+#define V1_COMMONAPI_SAMPLE_PROCESS0_HPP_
 
 
 
@@ -28,19 +28,19 @@
 namespace v1 {
 namespace commonapi {
 
-class SampleProcess {
+class SampleProcess0 {
 public:
-    virtual ~SampleProcess() { }
+    virtual ~SampleProcess0() { }
 
     static inline const char* getInterface();
     static inline CommonAPI::Version getInterfaceVersion();
 };
 
-const char* SampleProcess::getInterface() {
-    return ("commonapi.SampleProcess:v1_0");
+const char* SampleProcess0::getInterface() {
+    return ("commonapi.SampleProcess0:v1_0");
 }
 
-CommonAPI::Version SampleProcess::getInterfaceVersion() {
+CommonAPI::Version SampleProcess0::getInterfaceVersion() {
     return CommonAPI::Version(1, 0);
 }
 
@@ -55,4 +55,4 @@ namespace CommonAPI {
 // Compatibility
 namespace v1_0 = v1;
 
-#endif // V1_COMMONAPI_SAMPLE_PROCESS_HPP_
+#endif // V1_COMMONAPI_SAMPLE_PROCESS0_HPP_

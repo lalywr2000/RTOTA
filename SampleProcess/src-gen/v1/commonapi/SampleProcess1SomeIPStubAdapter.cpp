@@ -7,8 +7,8 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/.
  */
-#include <v1/commonapi/SampleProcessSomeIPStubAdapter.hpp>
-#include <v1/commonapi/SampleProcess.hpp>
+#include <v1/commonapi/SampleProcess1SomeIPStubAdapter.hpp>
+#include <v1/commonapi/SampleProcess1.hpp>
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
 #define COMMONAPI_INTERNAL_COMPILATION
@@ -25,24 +25,24 @@
 namespace v1 {
 namespace commonapi {
 
-std::shared_ptr<CommonAPI::SomeIP::StubAdapter> createSampleProcessSomeIPStubAdapter(
+std::shared_ptr<CommonAPI::SomeIP::StubAdapter> createSampleProcess1SomeIPStubAdapter(
                    const CommonAPI::SomeIP::Address &_address,
                    const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
                    const std::shared_ptr<CommonAPI::StubBase> &_stub) {
-    return std::make_shared< SampleProcessSomeIPStubAdapter<::v1::commonapi::SampleProcessStub>>(_address, _connection, _stub);
+    return std::make_shared< SampleProcess1SomeIPStubAdapter<::v1::commonapi::SampleProcess1Stub>>(_address, _connection, _stub);
 }
 
-void initializeSampleProcessSomeIPStubAdapter() {
+void initializeSampleProcess1SomeIPStubAdapter() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
-        "local:commonapi.SampleProcess:v1_0:SampleProcess",
+        "local:commonapi.SampleProcess1:v1_0:SampleProcess1",
          0x3e9, 0x2711, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerStubAdapterCreateMethod(
-        "commonapi.SampleProcess:v1_0",
-        &createSampleProcessSomeIPStubAdapter);
+        "commonapi.SampleProcess1:v1_0",
+        &createSampleProcess1SomeIPStubAdapter);
 }
 
-INITIALIZER(registerSampleProcessSomeIPStubAdapter) {
-    CommonAPI::SomeIP::Factory::get()->registerInterface(initializeSampleProcessSomeIPStubAdapter);
+INITIALIZER(registerSampleProcess1SomeIPStubAdapter) {
+    CommonAPI::SomeIP::Factory::get()->registerInterface(initializeSampleProcess1SomeIPStubAdapter);
 }
 
 } // namespace commonapi
