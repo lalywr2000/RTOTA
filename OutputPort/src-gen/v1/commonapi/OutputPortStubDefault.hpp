@@ -60,15 +60,9 @@ public:
         return &remoteEventHandler_;
     }
 
-    COMMONAPI_EXPORT virtual void setInput(const std::shared_ptr<CommonAPI::ClientId> _client, uint8_t _Input, setInputReply_t _reply) {
+    COMMONAPI_EXPORT virtual void setInput(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _Input, setInputReply_t _reply) {
         (void)_client;
         (void)_Input;
-        std::string message = "";
-        _reply(message);
-    }
-    COMMONAPI_EXPORT virtual void setPriority(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _ProcessNumber, setPriorityReply_t _reply) {
-        (void)_client;
-        (void)_ProcessNumber;
         std::string message = "";
         _reply(message);
     }
