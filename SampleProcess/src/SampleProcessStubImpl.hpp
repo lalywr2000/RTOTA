@@ -11,6 +11,8 @@ class SampleProcessStubImpl : public v1_0::commonapi::SampleProcess_StubDefault 
 private:
     SampleProcessSenderClass sender;
     
+    std::string process_number;
+    
 public:
     SampleProcessStubImpl();
     virtual ~SampleProcessStubImpl();
