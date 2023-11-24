@@ -7,7 +7,7 @@ void SampleProcessStubImpl::setInput(const std::shared_ptr<CommonAPI::ClientId> 
 {
     sender.OutputPortTargetProxy->setInput(_input * 2, sender.callStatus, sender.returnMessage);
 
-    _return(sender.returnMessage + "(via SampleProcess_)");
+    _return(sender.returnMessage + "\t(via SampleProcess_)");
 
     return;
 }
