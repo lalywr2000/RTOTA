@@ -12,6 +12,13 @@ OutputPortStubImpl::~OutputPortStubImpl() { }
 
 void OutputPortStubImpl::setInput(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, setInputReply_t _return)
 {
+    if (priority == -1)
+    {
+        _return("");
+    	
+    	return;
+    }
+    
     int temp1 = std::stoi(_input.substr(0, 1));
     
     if (!priority_changed && (temp1 != priority))
