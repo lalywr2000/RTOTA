@@ -38,9 +38,12 @@ class OutputPortProxyBase
 public:
 
     typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetInputAsyncCallback;
+    typedef std::function<void(const CommonAPI::CallStatus&, const std::string&)> SetPriorityAsyncCallback;
 
     virtual void setInput(std::string _Input, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
     virtual std::future<CommonAPI::CallStatus> setInputAsync(const std::string &_Input, SetInputAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
+    virtual void setPriority(std::string _Input, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr) = 0;
+    virtual std::future<CommonAPI::CallStatus> setPriorityAsync(const std::string &_Input, SetPriorityAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr) = 0;
 
     virtual std::future<void> getCompletionFuture() = 0;
 };

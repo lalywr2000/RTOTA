@@ -66,6 +66,12 @@ public:
         std::string message = "";
         _reply(message);
     }
+    COMMONAPI_EXPORT virtual void setPriority(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _Input, setPriorityReply_t _reply) {
+        (void)_client;
+        (void)_Input;
+        std::string message = "";
+        _reply(message);
+    }
 
 
 protected:

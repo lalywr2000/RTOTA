@@ -57,6 +57,10 @@ public:
 
     virtual std::future<CommonAPI::CallStatus> setInputAsync(const std::string &_Input, SetInputAsyncCallback _callback, const CommonAPI::CallInfo *_info);
 
+    virtual void setPriority(std::string _Input, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info);
+
+    virtual std::future<CommonAPI::CallStatus> setPriorityAsync(const std::string &_Input, SetPriorityAsyncCallback _callback, const CommonAPI::CallInfo *_info);
+
     virtual void getOwnVersion(uint16_t &_major, uint16_t &_minor) const;
 
     virtual std::future<void> getCompletionFuture();
