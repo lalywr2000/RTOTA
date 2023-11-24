@@ -7,6 +7,9 @@
 #include <v1/commonapi/OutputPortStubDefault.hpp>
 
 class OutputPortStubImpl : public v1_0::commonapi::OutputPortStubDefault {
+private:
+    int priority;
+
 public:
     OutputPortStubImpl();
     virtual ~OutputPortStubImpl();

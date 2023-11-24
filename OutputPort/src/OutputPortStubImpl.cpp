@@ -1,6 +1,10 @@
 #include "OutputPortStubImpl.hpp"
 
-OutputPortStubImpl::OutputPortStubImpl() { }
+OutputPortStubImpl::OutputPortStubImpl()
+{
+    priority = -1;
+}
+
 OutputPortStubImpl::~OutputPortStubImpl() { }
 
 void OutputPortStubImpl::setInput(const std::shared_ptr<CommonAPI::ClientId> _client, uint8_t _input, setInputReply_t _return)
@@ -14,7 +18,9 @@ void OutputPortStubImpl::setInput(const std::shared_ptr<CommonAPI::ClientId> _cl
 
 void OutputPortStubImpl::setPriority(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _process_number, setPriorityReply_t _return)
 {
-    _return("priority set to _process_number");
+    priority = _process_number.back() - 48;
+    
+    _return("*** priority set to " + _process_number + " ***");
 
     return;
 }
