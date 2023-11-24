@@ -57,7 +57,7 @@ void OutputPortStubImpl::setInput(const std::shared_ptr<CommonAPI::ClientId> _cl
 
 void OutputPortStubImpl::setPriority(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, setPriorityReply_t _return)
 {
-    int temp = std::stoi(_input.back());
+    int temp = _input.back() - 48;
 
     if (temp != priority)
     {
