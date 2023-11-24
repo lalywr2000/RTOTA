@@ -20,6 +20,8 @@ int main()
     
     SampleProcessSenderClass sender;
     sender.OutputPortTargetProxy->setPriority("SampleProcess_", sender.callStatus, sender.returnMessage);
+    
+    std::cout << sender.returnMessage << std::endl;
 
     while (!pkill_data) { }
     
