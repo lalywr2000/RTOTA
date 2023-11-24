@@ -61,6 +61,14 @@ public:
         std::tuple< CommonAPI::SomeIP::StringDeployment>
     > setInputStubDispatcher;
     
+    CommonAPI::SomeIP::MethodWithReplyStubDispatcher<
+        ::v1::commonapi::OutputPortStub,
+        std::tuple< std::string>,
+        std::tuple< std::string>,
+        std::tuple< CommonAPI::SomeIP::StringDeployment>,
+        std::tuple< CommonAPI::SomeIP::StringDeployment>
+    > setPriorityStubDispatcher;
+    
     OutputPortSomeIPStubAdapterInternal(
         const CommonAPI::SomeIP::Address &_address,
         const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
@@ -78,8 +86,17 @@ public:
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)),
             std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
         
+        ,
+        setPriorityStubDispatcher(
+            &OutputPortStub::setPriority,
+            false,
+            _stub->hasElement(1),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)),
+            std::make_tuple(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr)))
+        
     {
         OutputPortSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x66) }, &setInputStubDispatcher );
+        OutputPortSomeIPStubAdapterHelper::addStubDispatcher( { CommonAPI::SomeIP::method_id_t(0x67) }, &setPriorityStubDispatcher );
         // Provided events/fields
     }
 

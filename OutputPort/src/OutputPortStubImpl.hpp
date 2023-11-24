@@ -18,6 +18,7 @@ public:
     virtual ~OutputPortStubImpl();
 
     virtual void setInput(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, setInputReply_t _return);
+    virtual void setPriority(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, setPriorityReply_t _return);
 };
 
 #endif

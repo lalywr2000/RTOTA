@@ -8,6 +8,9 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.OutputPort
         method setInput {
                 SomeIpMethodID = 102
         }
+        method setPriority {
+                SomeIpMethodID = 103
+        }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
         instance commonapi.OutputPort {

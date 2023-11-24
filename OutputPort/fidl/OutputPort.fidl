@@ -12,5 +12,13 @@ interface OutputPort {
       String message
     }
   }
+  method setPriority {
+    in {
+      String Input
+    }
+    out {
+      String message
+    }
+  }
 }
 
