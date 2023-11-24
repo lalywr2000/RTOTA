@@ -25,9 +25,9 @@ include_directories(
 add_executable(InputPort
         src/InputPort.cpp
         src/InputPortSenderClass.cpp
-        src-gen/v1/commonapi/SampleProcess0SomeIPProxy.cpp
-        src-gen/v1/commonapi/SampleProcess0SomeIPDeployment.cpp
-        src-gen/v1/commonapi/SampleProcess1SomeIPProxy.cpp
-        src-gen/v1/commonapi/SampleProcess1SomeIPDeployment.cpp
+        src-gen/v1/commonapi/SampleProcess_0SomeIPProxy.cpp
+        src-gen/v1/commonapi/SampleProcess_0SomeIPDeployment.cpp
+        src-gen/v1/commonapi/SampleProcess_1SomeIPProxy.cpp
+        src-gen/v1/commonapi/SampleProcess_1SomeIPDeployment.cpp
 )
 target_link_libraries(InputPort CommonAPI CommonAPI-SomeIP vsomeip3)

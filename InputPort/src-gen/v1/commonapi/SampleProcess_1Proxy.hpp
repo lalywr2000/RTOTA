@@ -7,10 +7,10 @@
 * If a copy of the MPL was not distributed with this file, You can obtain one at
 * http://mozilla.org/MPL/2.0/.
 */
-#ifndef V1_COMMONAPI_Sample_Process0_PROXY_HPP_
-#define V1_COMMONAPI_Sample_Process0_PROXY_HPP_
+#ifndef V1_COMMONAPI_Sample_Process_1_PROXY_HPP_
+#define V1_COMMONAPI_Sample_Process_1_PROXY_HPP_
 
-#include <v1/commonapi/SampleProcess0ProxyBase.hpp>
+#include <v1/commonapi/SampleProcess_1ProxyBase.hpp>
 
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
@@ -28,15 +28,15 @@ namespace v1 {
 namespace commonapi {
 
 template <typename ... _AttributeExtensions>
-class SampleProcess0Proxy
-    : virtual public SampleProcess0,
-      virtual public SampleProcess0ProxyBase,
+class SampleProcess_1Proxy
+    : virtual public SampleProcess_1,
+      virtual public SampleProcess_1ProxyBase,
       virtual public _AttributeExtensions... {
 public:
-    SampleProcess0Proxy(std::shared_ptr<CommonAPI::Proxy> delegate);
-    ~SampleProcess0Proxy();
+    SampleProcess_1Proxy(std::shared_ptr<CommonAPI::Proxy> delegate);
+    ~SampleProcess_1Proxy();
 
-    typedef SampleProcess0 InterfaceType;
+    typedef SampleProcess_1 InterfaceType;
 
 
     /**
@@ -93,63 +93,63 @@ public:
 
 
  private:
-    std::shared_ptr< SampleProcess0ProxyBase> delegate_;
+    std::shared_ptr< SampleProcess_1ProxyBase> delegate_;
 };
 
-typedef SampleProcess0Proxy<> SampleProcess0ProxyDefault;
+typedef SampleProcess_1Proxy<> SampleProcess_1ProxyDefault;
 
 
 //
-// SampleProcess0Proxy Implementation
+// SampleProcess_1Proxy Implementation
 //
 template <typename ... _AttributeExtensions>
-SampleProcess0Proxy<_AttributeExtensions...>::SampleProcess0Proxy(std::shared_ptr<CommonAPI::Proxy> delegate):
-        _AttributeExtensions(*(std::dynamic_pointer_cast< SampleProcess0ProxyBase>(delegate)))...,
-        delegate_(std::dynamic_pointer_cast< SampleProcess0ProxyBase>(delegate)) {
+SampleProcess_1Proxy<_AttributeExtensions...>::SampleProcess_1Proxy(std::shared_ptr<CommonAPI::Proxy> delegate):
+        _AttributeExtensions(*(std::dynamic_pointer_cast< SampleProcess_1ProxyBase>(delegate)))...,
+        delegate_(std::dynamic_pointer_cast< SampleProcess_1ProxyBase>(delegate)) {
 }
 
 template <typename ... _AttributeExtensions>
-SampleProcess0Proxy<_AttributeExtensions...>::~SampleProcess0Proxy() {
+SampleProcess_1Proxy<_AttributeExtensions...>::~SampleProcess_1Proxy() {
 }
 
 template <typename ... _AttributeExtensions>
-void SampleProcess0Proxy<_AttributeExtensions...>::setInput(uint8_t _Input, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+void SampleProcess_1Proxy<_AttributeExtensions...>::setInput(uint8_t _Input, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
     delegate_->setInput(_Input, _internalCallStatus, _message, _info);
 }
 
 template <typename ... _AttributeExtensions>
-std::future<CommonAPI::CallStatus> SampleProcess0Proxy<_AttributeExtensions...>::setInputAsync(const uint8_t &_Input, SetInputAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+std::future<CommonAPI::CallStatus> SampleProcess_1Proxy<_AttributeExtensions...>::setInputAsync(const uint8_t &_Input, SetInputAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
     return delegate_->setInputAsync(_Input, _callback, _info);
 }
 
 template <typename ... _AttributeExtensions>
-const CommonAPI::Address &SampleProcess0Proxy<_AttributeExtensions...>::getAddress() const {
+const CommonAPI::Address &SampleProcess_1Proxy<_AttributeExtensions...>::getAddress() const {
     return delegate_->getAddress();
 }
 
 template <typename ... _AttributeExtensions>
-bool SampleProcess0Proxy<_AttributeExtensions...>::isAvailable() const {
+bool SampleProcess_1Proxy<_AttributeExtensions...>::isAvailable() const {
     return delegate_->isAvailable();
 }
 
 template <typename ... _AttributeExtensions>
-bool SampleProcess0Proxy<_AttributeExtensions...>::isAvailableBlocking() const {
+bool SampleProcess_1Proxy<_AttributeExtensions...>::isAvailableBlocking() const {
     return delegate_->isAvailableBlocking();
 }
 
 template <typename ... _AttributeExtensions>
-CommonAPI::ProxyStatusEvent& SampleProcess0Proxy<_AttributeExtensions...>::getProxyStatusEvent() {
+CommonAPI::ProxyStatusEvent& SampleProcess_1Proxy<_AttributeExtensions...>::getProxyStatusEvent() {
     return delegate_->getProxyStatusEvent();
 }
 
 template <typename ... _AttributeExtensions>
-CommonAPI::InterfaceVersionAttribute& SampleProcess0Proxy<_AttributeExtensions...>::getInterfaceVersionAttribute() {
+CommonAPI::InterfaceVersionAttribute& SampleProcess_1Proxy<_AttributeExtensions...>::getInterfaceVersionAttribute() {
     return delegate_->getInterfaceVersionAttribute();
 }
 
 
 template <typename ... _AttributeExtensions>
-std::future<void> SampleProcess0Proxy<_AttributeExtensions...>::getCompletionFuture() {
+std::future<void> SampleProcess_1Proxy<_AttributeExtensions...>::getCompletionFuture() {
     return delegate_->getCompletionFuture();
 }
 
@@ -161,4 +161,4 @@ std::future<void> SampleProcess0Proxy<_AttributeExtensions...>::getCompletionFut
 // Compatibility
 namespace v1_0 = v1;
 
-#endif // V1_COMMONAPI_Sample_Process0_PROXY_HPP_
+#endif // V1_COMMONAPI_Sample_Process_1_PROXY_HPP_

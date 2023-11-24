@@ -7,10 +7,10 @@
 * If a copy of the MPL was not distributed with this file, You can obtain one at
 * http://mozilla.org/MPL/2.0/.
 */
-#ifndef V1_COMMONAPI_Sample_Process0_PROXY_BASE_HPP_
-#define V1_COMMONAPI_Sample_Process0_PROXY_BASE_HPP_
+#ifndef V1_COMMONAPI_Sample_Process_0_PROXY_BASE_HPP_
+#define V1_COMMONAPI_Sample_Process_0_PROXY_BASE_HPP_
 
-#include <v1/commonapi/SampleProcess0.hpp>
+#include <v1/commonapi/SampleProcess_0.hpp>
 
 
 
@@ -33,7 +33,7 @@
 namespace v1 {
 namespace commonapi {
 
-class SampleProcess0ProxyBase
+class SampleProcess_0ProxyBase
     : virtual public CommonAPI::Proxy {
 public:
 
@@ -52,4 +52,4 @@ public:
 // Compatibility
 namespace v1_0 = v1;
 
-#endif // V1_COMMONAPI_Sample_Process0_PROXY_BASE_HPP_
+#endif // V1_COMMONAPI_Sample_Process_0_PROXY_BASE_HPP_

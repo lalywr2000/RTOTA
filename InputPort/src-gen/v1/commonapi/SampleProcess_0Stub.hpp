@@ -7,8 +7,8 @@
 * If a copy of the MPL was not distributed with this file, You can obtain one at
 * http://mozilla.org/MPL/2.0/.
 */
-#ifndef V1_COMMONAPI_Sample_Process1_STUB_HPP_
-#define V1_COMMONAPI_Sample_Process1_STUB_HPP_
+#ifndef V1_COMMONAPI_Sample_Process_0_STUB_HPP_
+#define V1_COMMONAPI_Sample_Process_0_STUB_HPP_
 
 #include <functional>
 #include <sstream>
@@ -16,7 +16,7 @@
 
 
 
-#include <v1/commonapi/SampleProcess1.hpp>
+#include <v1/commonapi/SampleProcess_0.hpp>
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
 #define COMMONAPI_INTERNAL_COMPILATION
@@ -38,13 +38,13 @@ namespace commonapi {
 
 /**
  * Receives messages from remote and handles all dispatching of deserialized calls
- * to a stub for the service SampleProcess1. Also provides means to send broadcasts
+ * to a stub for the service SampleProcess_0. Also provides means to send broadcasts
  * and attribute-changed-notifications of observable attributes as defined by this service.
  * An application developer should not need to bother with this class.
  */
-class SampleProcess1StubAdapter
+class SampleProcess_0StubAdapter
     : public virtual CommonAPI::StubAdapter,
-      public virtual SampleProcess1 {
+      public virtual SampleProcess_0 {
  public:
 
 
@@ -61,7 +61,7 @@ protected:
 
 /**
  * Defines the necessary callbacks to handle remote set events related to the attributes
- * defined in the IDL description for SampleProcess1.
+ * defined in the IDL description for SampleProcess_0.
  * For each attribute two callbacks are defined:
  * - a verification callback that allows to verify the requested value and to prevent setting
  *   e.g. an invalid value ("onRemoteSet<AttributeName>").
@@ -71,26 +71,26 @@ protected:
  * This class and the one below are the ones an application developer needs to have
  * a look at if he wants to implement a service.
  */
-class SampleProcess1StubRemoteEvent
+class SampleProcess_0StubRemoteEvent
 {
 public:
-    virtual ~SampleProcess1StubRemoteEvent() { }
+    virtual ~SampleProcess_0StubRemoteEvent() { }
 
 };
 
 /**
  * Defines the interface that must be implemented by any class that should provide
- * the service SampleProcess1 to remote clients.
+ * the service SampleProcess_0 to remote clients.
  * This class and the one above are the ones an application developer needs to have
  * a look at if he wants to implement a service.
  */
-class SampleProcess1Stub
-    : public virtual CommonAPI::Stub<SampleProcess1StubAdapter, SampleProcess1StubRemoteEvent>
+class SampleProcess_0Stub
+    : public virtual CommonAPI::Stub<SampleProcess_0StubAdapter, SampleProcess_0StubRemoteEvent>
 {
 public:
     typedef std::function<void (std::string _message)> setInputReply_t;
 
-    virtual ~SampleProcess1Stub() {}
+    virtual ~SampleProcess_0Stub() {}
     void lockInterfaceVersionAttribute(bool _lockAccess) { static_cast<void>(_lockAccess); }
     bool hasElement(const uint32_t _id) const {
         return (_id < 1);
@@ -101,11 +101,11 @@ public:
     virtual void setInput(const std::shared_ptr<CommonAPI::ClientId> _client, uint8_t _Input, setInputReply_t _reply) = 0;
 
 
-    using CommonAPI::Stub<SampleProcess1StubAdapter, SampleProcess1StubRemoteEvent>::initStubAdapter;
-    typedef CommonAPI::Stub<SampleProcess1StubAdapter, SampleProcess1StubRemoteEvent>::StubAdapterType StubAdapterType;
-    typedef CommonAPI::Stub<SampleProcess1StubAdapter, SampleProcess1StubRemoteEvent>::RemoteEventHandlerType RemoteEventHandlerType;
-    typedef SampleProcess1StubRemoteEvent RemoteEventType;
-    typedef SampleProcess1 StubInterface;
+    using CommonAPI::Stub<SampleProcess_0StubAdapter, SampleProcess_0StubRemoteEvent>::initStubAdapter;
+    typedef CommonAPI::Stub<SampleProcess_0StubAdapter, SampleProcess_0StubRemoteEvent>::StubAdapterType StubAdapterType;
+    typedef CommonAPI::Stub<SampleProcess_0StubAdapter, SampleProcess_0StubRemoteEvent>::RemoteEventHandlerType RemoteEventHandlerType;
+    typedef SampleProcess_0StubRemoteEvent RemoteEventType;
+    typedef SampleProcess_0 StubInterface;
 };
 
 } // namespace commonapi
@@ -115,4 +115,4 @@ public:
 // Compatibility
 namespace v1_0 = v1;
 
-#endif // V1_COMMONAPI_Sample_Process1_STUB_HPP_
+#endif // V1_COMMONAPI_Sample_Process_0_STUB_HPP_

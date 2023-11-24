@@ -3,8 +3,8 @@
 
 #include <string>
 #include <CommonAPI/CommonAPI.hpp>
-#include <v1/commonapi/SampleProcess0Proxy.hpp>
-#include <v1/commonapi/SampleProcess1Proxy.hpp>
+#include <v1/commonapi/SampleProcess_0Proxy.hpp>
+#include <v1/commonapi/SampleProcess_1Proxy.hpp>
 
 using namespace v1_0::commonapi;
 
@@ -15,8 +15,8 @@ public:
     ~InputPortSenderClass();
 
     std::shared_ptr<CommonAPI::Runtime> runtime;
-    std::shared_ptr<SampleProcess0Proxy<>> SampleProcess0TargetProxy;
-    std::shared_ptr<SampleProcess1Proxy<>> SampleProcess1TargetProxy;
+    std::shared_ptr<SampleProcess_0Proxy<>> SampleProcess_0TargetProxy;
+    std::shared_ptr<SampleProcess_1Proxy<>> SampleProcess_1TargetProxy;
 
     CommonAPI::CallStatus callStatus;
     std::string returnMessage;

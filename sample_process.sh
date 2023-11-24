@@ -6,16 +6,22 @@ cd RTOTA
 cd SampleProcess
 cd src
 
-for file in ./*.txt; do
-    if [ -f "$file" ]; then
-        sed -i 's/SampleProcess/SampleProcess0/g' "$file"
-    fi
-done
+#for file in *.cpp; do
+#    if [ -f "$file" ]; then
+#        sed -i 's/SampleProcess/SampleProcess0/g' "$file"
+#    fi
+#done
 
-cd ..
-mkdir build
-cd build
-cmake ..
-make
-./SampleProcess
+#for file in *.hpp; do
+#    if [ -f "$file" ]; then
+#        sed -i 's/SampleProcess/SampleProcess0/g' "$file"
+#    fi
+#done
+
+#cd ..
+#mkdir build
+#cd build
+#cmake ..
+#make
+#./SampleProcess
 

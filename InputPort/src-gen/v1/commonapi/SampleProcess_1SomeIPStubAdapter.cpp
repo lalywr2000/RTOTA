@@ -7,8 +7,8 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/.
  */
-#include <v1/commonapi/SampleProcess0SomeIPStubAdapter.hpp>
-#include <v1/commonapi/SampleProcess0.hpp>
+#include <v1/commonapi/SampleProcess_1SomeIPStubAdapter.hpp>
+#include <v1/commonapi/SampleProcess_1.hpp>
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
 #define COMMONAPI_INTERNAL_COMPILATION
@@ -25,24 +25,24 @@
 namespace v1 {
 namespace commonapi {
 
-std::shared_ptr<CommonAPI::SomeIP::StubAdapter> createSampleProcess0SomeIPStubAdapter(
+std::shared_ptr<CommonAPI::SomeIP::StubAdapter> createSampleProcess_1SomeIPStubAdapter(
                    const CommonAPI::SomeIP::Address &_address,
                    const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection,
                    const std::shared_ptr<CommonAPI::StubBase> &_stub) {
-    return std::make_shared< SampleProcess0SomeIPStubAdapter<::v1::commonapi::SampleProcess0Stub>>(_address, _connection, _stub);
+    return std::make_shared< SampleProcess_1SomeIPStubAdapter<::v1::commonapi::SampleProcess_1Stub>>(_address, _connection, _stub);
 }
 
-void initializeSampleProcess0SomeIPStubAdapter() {
+void initializeSampleProcess_1SomeIPStubAdapter() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
-        "local:commonapi.SampleProcess0:v1_0:SampleProcess0",
-         0x3e8, 0x2710, 1, 0);
+        "local:commonapi.SampleProcess_1:v1_0:SampleProcess_1",
+         0x3e9, 0x2711, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerStubAdapterCreateMethod(
-        "commonapi.SampleProcess0:v1_0",
-        &createSampleProcess0SomeIPStubAdapter);
+        "commonapi.SampleProcess_1:v1_0",
+        &createSampleProcess_1SomeIPStubAdapter);
 }
 
-INITIALIZER(registerSampleProcess0SomeIPStubAdapter) {
-    CommonAPI::SomeIP::Factory::get()->registerInterface(initializeSampleProcess0SomeIPStubAdapter);
+INITIALIZER(registerSampleProcess_1SomeIPStubAdapter) {
+    CommonAPI::SomeIP::Factory::get()->registerInterface(initializeSampleProcess_1SomeIPStubAdapter);
 }
 
 } // namespace commonapi
