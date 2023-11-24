@@ -77,7 +77,7 @@ public:
      * "SUCCESS" or which type of error has occurred. In case of an error, ONLY the CallStatus
      * will be set.
      */
-    virtual void setInput(uint8_t _Input, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr);
+    virtual void setInput(std::string _Input, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr);
     /**
      * Calls setInput with asynchronous semantics.
      *
@@ -88,28 +88,7 @@ public:
      * The std::future returned by this method will be fulfilled at arrival of the reply.
      * It will provide the same value for CallStatus as will be handed to the callback.
      */
-    virtual std::future<CommonAPI::CallStatus> setInputAsync(const uint8_t &_Input, SetInputAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr);
-    /**
-     * Calls setPriority with synchronous semantics.
-     *
-     * All const parameters are input parameters to this method.
-     * All non-const parameters will be filled with the returned values.
-     * The CallStatus will be filled when the method returns and indicate either
-     * "SUCCESS" or which type of error has occurred. In case of an error, ONLY the CallStatus
-     * will be set.
-     */
-    virtual void setPriority(std::string _ProcessNumber, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info = nullptr);
-    /**
-     * Calls setPriority with asynchronous semantics.
-     *
-     * The provided callback will be called when the reply to this call arrives or
-     * an error occurs during the call. The CallStatus will indicate either "SUCCESS"
-     * or which type of error has occurred. In case of any error, ONLY the CallStatus
-     * will have a defined value.
-     * The std::future returned by this method will be fulfilled at arrival of the reply.
-     * It will provide the same value for CallStatus as will be handed to the callback.
-     */
-    virtual std::future<CommonAPI::CallStatus> setPriorityAsync(const std::string &_ProcessNumber, SetPriorityAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr);
+    virtual std::future<CommonAPI::CallStatus> setInputAsync(const std::string &_Input, SetInputAsyncCallback _callback = nullptr, const CommonAPI::CallInfo *_info = nullptr);
 
 
 
@@ -134,22 +113,13 @@ OutputPortProxy<_AttributeExtensions...>::~OutputPortProxy() {
 }
 
 template <typename ... _AttributeExtensions>
-void OutputPortProxy<_AttributeExtensions...>::setInput(uint8_t _Input, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+void OutputPortProxy<_AttributeExtensions...>::setInput(std::string _Input, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
     delegate_->setInput(_Input, _internalCallStatus, _message, _info);
 }
 
 template <typename ... _AttributeExtensions>
-std::future<CommonAPI::CallStatus> OutputPortProxy<_AttributeExtensions...>::setInputAsync(const uint8_t &_Input, SetInputAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+std::future<CommonAPI::CallStatus> OutputPortProxy<_AttributeExtensions...>::setInputAsync(const std::string &_Input, SetInputAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
     return delegate_->setInputAsync(_Input, _callback, _info);
-}
-template <typename ... _AttributeExtensions>
-void OutputPortProxy<_AttributeExtensions...>::setPriority(std::string _ProcessNumber, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
-    delegate_->setPriority(_ProcessNumber, _internalCallStatus, _message, _info);
-}
-
-template <typename ... _AttributeExtensions>
-std::future<CommonAPI::CallStatus> OutputPortProxy<_AttributeExtensions...>::setPriorityAsync(const std::string &_ProcessNumber, SetPriorityAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
-    return delegate_->setPriorityAsync(_ProcessNumber, _callback, _info);
 }
 
 template <typename ... _AttributeExtensions>

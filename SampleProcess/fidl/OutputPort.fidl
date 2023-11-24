@@ -6,15 +6,7 @@ interface OutputPort {
 
   method setInput {
     in {
-      UInt8 Input
-    }
-    out {
-      String message
-    }
-  }
-  method setPriority {
-    in {
-      String ProcessNumber
+      String Input
     }
     out {
       String message
