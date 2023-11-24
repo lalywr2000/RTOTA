@@ -114,6 +114,64 @@ std::future<CommonAPI::CallStatus> OutputPortSomeIPProxy::setInputAsync(const ui
         std::make_tuple(deploy_message));
 }
 
+void OutputPortSomeIPProxy::setPriority(std::string _ProcessNumber, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_ProcessNumber(_ProcessNumber, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    CommonAPI::SomeIP::ProxyHelper<
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
+            >
+        >,
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
+            >
+        >
+    >::callMethodWithReply(
+        *this,
+        CommonAPI::SomeIP::method_id_t(0x67),
+        false,
+        false,
+        (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
+        deploy_ProcessNumber,
+        _internalCallStatus,
+        deploy_message);
+    _message = deploy_message.getValue();
+}
+
+std::future<CommonAPI::CallStatus> OutputPortSomeIPProxy::setPriorityAsync(const std::string &_ProcessNumber, SetPriorityAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_ProcessNumber(_ProcessNumber, static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
+    return CommonAPI::SomeIP::ProxyHelper<
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
+            >
+        >,
+        CommonAPI::SomeIP::SerializableArguments<
+            CommonAPI::Deployable<
+                std::string,
+                CommonAPI::SomeIP::StringDeployment
+            >
+        >
+    >::callMethodAsync(
+        *this,
+        CommonAPI::SomeIP::method_id_t(0x67),
+        false,
+        false,
+        (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
+        deploy_ProcessNumber,
+        [_callback] (CommonAPI::CallStatus _internalCallStatus, CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment > _message) {
+            if (_callback)
+                _callback(_internalCallStatus, _message.getValue());
+        },
+        std::make_tuple(deploy_message));
+}
+
 void OutputPortSomeIPProxy::getOwnVersion(uint16_t& ownVersionMajor, uint16_t& ownVersionMinor) const {
     ownVersionMajor = 1;
     ownVersionMinor = 0;

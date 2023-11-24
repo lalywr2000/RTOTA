@@ -12,7 +12,12 @@ void OutputPortStubImpl::setInput(const std::shared_ptr<CommonAPI::ClientId> _cl
     return;
 }
 
+void OutputPortStubImpl::setPriority(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _process_number, setPriorityReply_t _return)
+{
+    _return("priority set to _process_number");
 
+    return;
+}
 
 
 /*
