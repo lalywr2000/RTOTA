@@ -46,6 +46,10 @@ void OutputPortStubImpl::setInput(const std::shared_ptr<CommonAPI::ClientId> _cl
     	    
     	    _return(std::to_string(temp2));
         }
+        else
+        {
+            _return("");
+        }
     }
     else
     {
@@ -56,6 +60,10 @@ void OutputPortStubImpl::setInput(const std::shared_ptr<CommonAPI::ClientId> _cl
     	    std::cout << "output = " << temp2 << std::endl;
     	    
     	    _return(std::to_string(temp2));
+        }
+        else
+        {
+            _return("");
         }
     }
 
