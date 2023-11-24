@@ -72,7 +72,7 @@ void OutputPortStubImpl::setPriority(const std::shared_ptr<CommonAPI::ClientId> 
         priority_changed = true;
     }
     
-    _return("");
+    _return("priority set to " + _input);
 
     return;
 }
