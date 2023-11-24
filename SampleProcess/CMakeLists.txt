@@ -22,8 +22,6 @@ include_directories(
 )
 
 
-set(PROCESS_NUMBER "-")
-
 add_executable(SampleProcess_${PROCESS_NUMBER}
         src/SampleProcess.cpp
         src/SampleProcessStubImpl.cpp
