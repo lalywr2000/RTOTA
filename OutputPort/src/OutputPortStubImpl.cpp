@@ -15,16 +15,7 @@ void OutputPortStubImpl::setInput(const std::shared_ptr<CommonAPI::ClientId> _cl
 
 
 
-
-
-
-
-
-
-
-
-
-///////////////
+/*
 #include <iostream>
 #include <unistd.h>
 #include <CommonAPI/CommonAPI.hpp>
@@ -128,5 +119,5 @@ int main()
     }
 
     return 0;
-}
+} */
 
