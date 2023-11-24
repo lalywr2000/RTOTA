@@ -26,6 +26,7 @@ add_executable(SampleProcess_${PROCESS_NUMBER}
         src/SampleProcess.cpp
         src/SampleProcessStubImpl.cpp
         src/SampleProcessSenderClass.cpp
+        src/PkillData.cpp
         src-gen/v1/commonapi/OutputPortSomeIPProxy.cpp
         src-gen/v1/commonapi/OutputPortSomeIPDeployment.cpp
         src-gen/v1/commonapi/SampleProcess_${PROCESS_NUMBER}SomeIPStubAdapter.cpp

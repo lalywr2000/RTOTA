@@ -9,6 +9,13 @@ void SampleProcessStubImpl::setInput(const std::shared_ptr<CommonAPI::ClientId> 
     
     if (sender.returnMessage != "")
     {
+        if (sender.returnMessage == "pkill")
+        {
+            pkill_data = true;
+            _return("");
+            return;
+        }
+        
         _return(sender.returnMessage + "\t(via SampleProcess_)");
     }
     else

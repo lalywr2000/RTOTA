@@ -5,6 +5,7 @@
 #include <CommonAPI/CommonAPI.hpp>
 #include <v1/commonapi/SampleProcess_StubDefault.hpp>
 #include "SampleProcessSenderClass.hpp"
+#include "PkillData.hpp"
 
 class SampleProcessStubImpl : public v1_0::commonapi::SampleProcess_StubDefault {
 private:
