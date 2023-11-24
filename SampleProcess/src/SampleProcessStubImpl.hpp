@@ -3,10 +3,10 @@
 
 #include <string>
 #include <CommonAPI/CommonAPI.hpp>
-#include <v1/commonapi/SampleProcessStubDefault.hpp>
+#include <v1/commonapi/SampleProcess_StubDefault.hpp>
 #include "SampleProcessSenderClass.hpp"
 
-class SampleProcessStubImpl : public v1_0::commonapi::SampleProcessStubDefault {
+class SampleProcessStubImpl : public v1_0::commonapi::SampleProcess_StubDefault {
 private:
     SampleProcessSenderClass sender;
     

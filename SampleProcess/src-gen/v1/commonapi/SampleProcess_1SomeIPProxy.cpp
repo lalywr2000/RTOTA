@@ -7,7 +7,7 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/.
  */
-#include <v1/commonapi/SampleProcess0SomeIPProxy.hpp>
+#include <v1/commonapi/SampleProcess_1SomeIPProxy.hpp>
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
 #define COMMONAPI_INTERNAL_COMPILATION
@@ -24,39 +24,39 @@
 namespace v1 {
 namespace commonapi {
 
-std::shared_ptr<CommonAPI::SomeIP::Proxy> createSampleProcess0SomeIPProxy(
+std::shared_ptr<CommonAPI::SomeIP::Proxy> createSampleProcess_1SomeIPProxy(
     const CommonAPI::SomeIP::Address &_address,
     const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection) {
-    return std::make_shared< SampleProcess0SomeIPProxy>(_address, _connection);
+    return std::make_shared< SampleProcess_1SomeIPProxy>(_address, _connection);
 }
 
-void initializeSampleProcess0SomeIPProxy() {
+void initializeSampleProcess_1SomeIPProxy() {
     CommonAPI::SomeIP::AddressTranslator::get()->insert(
-        "local:commonapi.SampleProcess0:v1_0:SampleProcess0",
-        0x3e8, 0x2710, 1, 0);
+        "local:commonapi.SampleProcess_1:v1_0:SampleProcess_1",
+        0x3e9, 0x2711, 1, 0);
     CommonAPI::SomeIP::Factory::get()->registerProxyCreateMethod(
-        "commonapi.SampleProcess0:v1_0",
-        &createSampleProcess0SomeIPProxy);
+        "commonapi.SampleProcess_1:v1_0",
+        &createSampleProcess_1SomeIPProxy);
 }
 
-INITIALIZER(registerSampleProcess0SomeIPProxy) {
-    CommonAPI::SomeIP::Factory::get()->registerInterface(initializeSampleProcess0SomeIPProxy);
+INITIALIZER(registerSampleProcess_1SomeIPProxy) {
+    CommonAPI::SomeIP::Factory::get()->registerInterface(initializeSampleProcess_1SomeIPProxy);
 }
 
-SampleProcess0SomeIPProxy::SampleProcess0SomeIPProxy(
+SampleProcess_1SomeIPProxy::SampleProcess_1SomeIPProxy(
     const CommonAPI::SomeIP::Address &_address,
     const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection)
         : CommonAPI::SomeIP::Proxy(_address, _connection)
 {
 }
 
-SampleProcess0SomeIPProxy::~SampleProcess0SomeIPProxy() {
+SampleProcess_1SomeIPProxy::~SampleProcess_1SomeIPProxy() {
     completed_.set_value();
 }
 
 
 
-void SampleProcess0SomeIPProxy::setInput(uint8_t _Input, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
+void SampleProcess_1SomeIPProxy::setInput(uint8_t _Input, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info) {
     CommonAPI::Deployable< uint8_t, CommonAPI::SomeIP::IntegerDeployment<uint8_t>> deploy_Input(_Input, static_cast< CommonAPI::SomeIP::IntegerDeployment<uint8_t>* >(nullptr));
     CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     CommonAPI::SomeIP::ProxyHelper<
@@ -74,7 +74,7 @@ void SampleProcess0SomeIPProxy::setInput(uint8_t _Input, CommonAPI::CallStatus &
         >
     >::callMethodWithReply(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x64),
+        CommonAPI::SomeIP::method_id_t(0x65),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -84,7 +84,7 @@ void SampleProcess0SomeIPProxy::setInput(uint8_t _Input, CommonAPI::CallStatus &
     _message = deploy_message.getValue();
 }
 
-std::future<CommonAPI::CallStatus> SampleProcess0SomeIPProxy::setInputAsync(const uint8_t &_Input, SetInputAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
+std::future<CommonAPI::CallStatus> SampleProcess_1SomeIPProxy::setInputAsync(const uint8_t &_Input, SetInputAsyncCallback _callback, const CommonAPI::CallInfo *_info) {
     CommonAPI::Deployable< uint8_t, CommonAPI::SomeIP::IntegerDeployment<uint8_t>> deploy_Input(_Input, static_cast< CommonAPI::SomeIP::IntegerDeployment<uint8_t>* >(nullptr));
     CommonAPI::Deployable< std::string, CommonAPI::SomeIP::StringDeployment> deploy_message(static_cast< CommonAPI::SomeIP::StringDeployment* >(nullptr));
     return CommonAPI::SomeIP::ProxyHelper<
@@ -102,7 +102,7 @@ std::future<CommonAPI::CallStatus> SampleProcess0SomeIPProxy::setInputAsync(cons
         >
     >::callMethodAsync(
         *this,
-        CommonAPI::SomeIP::method_id_t(0x64),
+        CommonAPI::SomeIP::method_id_t(0x65),
         false,
         false,
         (_info ? _info : &CommonAPI::SomeIP::defaultCallInfo),
@@ -114,12 +114,12 @@ std::future<CommonAPI::CallStatus> SampleProcess0SomeIPProxy::setInputAsync(cons
         std::make_tuple(deploy_message));
 }
 
-void SampleProcess0SomeIPProxy::getOwnVersion(uint16_t& ownVersionMajor, uint16_t& ownVersionMinor) const {
+void SampleProcess_1SomeIPProxy::getOwnVersion(uint16_t& ownVersionMajor, uint16_t& ownVersionMinor) const {
     ownVersionMajor = 1;
     ownVersionMinor = 0;
 }
 
-std::future<void> SampleProcess0SomeIPProxy::getCompletionFuture() {
+std::future<void> SampleProcess_1SomeIPProxy::getCompletionFuture() {
     return completed_.get_future();
 }
 

@@ -7,10 +7,10 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at
  * http://mozilla.org/MPL/2.0/.
  */
-#ifndef V1_COMMONAPI_SAMPLE_PROCESS1_SOMEIP_PROXY_HPP_
-#define V1_COMMONAPI_SAMPLE_PROCESS1_SOMEIP_PROXY_HPP_
+#ifndef V1_COMMONAPI_SAMPLE_PROCESS_0_SOMEIP_PROXY_HPP_
+#define V1_COMMONAPI_SAMPLE_PROCESS_0_SOMEIP_PROXY_HPP_
 
-#include <v1/commonapi/SampleProcess1ProxyBase.hpp>
+#include <v1/commonapi/SampleProcess_0ProxyBase.hpp>
 
 #if !defined (COMMONAPI_INTERNAL_COMPILATION)
 #define COMMONAPI_INTERNAL_COMPILATION
@@ -43,15 +43,15 @@
 namespace v1 {
 namespace commonapi {
 
-class SampleProcess1SomeIPProxy
-    : virtual public SampleProcess1ProxyBase,
+class SampleProcess_0SomeIPProxy
+    : virtual public SampleProcess_0ProxyBase,
       virtual public CommonAPI::SomeIP::Proxy {
 public:
-    SampleProcess1SomeIPProxy(
+    SampleProcess_0SomeIPProxy(
         const CommonAPI::SomeIP::Address &_address,
         const std::shared_ptr<CommonAPI::SomeIP::ProxyConnection> &_connection);
 
-    virtual ~SampleProcess1SomeIPProxy();
+    virtual ~SampleProcess_0SomeIPProxy();
 
     virtual void setInput(uint8_t _Input, CommonAPI::CallStatus &_internalCallStatus, std::string &_message, const CommonAPI::CallInfo *_info);
 
@@ -69,4 +69,4 @@ private:
 } // namespace commonapi
 } // namespace v1
 
-#endif // V1_COMMONAPI_Sample_Process1_SOMEIP_PROXY_HPP_
+#endif // V1_COMMONAPI_Sample_Process_0_SOMEIP_PROXY_HPP_

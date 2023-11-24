@@ -7,13 +7,13 @@
 * If a copy of the MPL was not distributed with this file, You can obtain one at
 * http://mozilla.org/MPL/2.0/.
 */
-#ifndef V1_COMMONAPI_Sample_Process1_STUB_DEFAULT_HPP_
-#define V1_COMMONAPI_Sample_Process1_STUB_DEFAULT_HPP_
+#ifndef V1_COMMONAPI_Sample_Process_1_STUB_DEFAULT_HPP_
+#define V1_COMMONAPI_Sample_Process_1_STUB_DEFAULT_HPP_
 
 
 #include <CommonAPI/Export.hpp>
 
-#include <v1/commonapi/SampleProcess1Stub.hpp>
+#include <v1/commonapi/SampleProcess_1Stub.hpp>
 #include <cassert>
 #include <sstream>
 
@@ -33,8 +33,8 @@ namespace v1 {
 namespace commonapi {
 
 /**
- * Provides a default implementation for SampleProcess1StubRemoteEvent and
- * SampleProcess1Stub. Method callbacks have an empty implementation,
+ * Provides a default implementation for SampleProcess_1StubRemoteEvent and
+ * SampleProcess_1Stub. Method callbacks have an empty implementation,
  * remote set calls on attributes will always change the value of the attribute
  * to the one received.
  *
@@ -42,12 +42,12 @@ namespace commonapi {
  * that would be defined for this service, and/or if you do not need any non-default
  * behaviour.
  */
-class COMMONAPI_EXPORT_CLASS_EXPLICIT SampleProcess1StubDefault
-    : public virtual SampleProcess1Stub {
+class COMMONAPI_EXPORT_CLASS_EXPLICIT SampleProcess_1StubDefault
+    : public virtual SampleProcess_1Stub {
 public:
-    COMMONAPI_EXPORT SampleProcess1StubDefault()
+    COMMONAPI_EXPORT SampleProcess_1StubDefault()
         : remoteEventHandler_(this),
-          interfaceVersion_(SampleProcess1::getInterfaceVersion()) {
+          interfaceVersion_(SampleProcess_1::getInterfaceVersion()) {
     }
 
     COMMONAPI_EXPORT const CommonAPI::Version& getInterfaceVersion(std::shared_ptr<CommonAPI::ClientId> _client) {
@@ -55,8 +55,8 @@ public:
         return interfaceVersion_;
     }
 
-    COMMONAPI_EXPORT SampleProcess1StubRemoteEvent* initStubAdapter(const std::shared_ptr< SampleProcess1StubAdapter> &_adapter) {
-        CommonAPI::Stub<SampleProcess1StubAdapter, SampleProcess1StubRemoteEvent>::stubAdapter_ = _adapter;
+    COMMONAPI_EXPORT SampleProcess_1StubRemoteEvent* initStubAdapter(const std::shared_ptr< SampleProcess_1StubAdapter> &_adapter) {
+        CommonAPI::Stub<SampleProcess_1StubAdapter, SampleProcess_1StubRemoteEvent>::stubAdapter_ = _adapter;
         return &remoteEventHandler_;
     }
 
@@ -69,19 +69,19 @@ public:
 
 
 protected:
-    class COMMONAPI_EXPORT_CLASS_EXPLICIT RemoteEventHandler: public virtual SampleProcess1StubRemoteEvent {
+    class COMMONAPI_EXPORT_CLASS_EXPLICIT RemoteEventHandler: public virtual SampleProcess_1StubRemoteEvent {
     public:
-        COMMONAPI_EXPORT RemoteEventHandler(SampleProcess1StubDefault *_defaultStub)
+        COMMONAPI_EXPORT RemoteEventHandler(SampleProcess_1StubDefault *_defaultStub)
             : 
               defaultStub_(_defaultStub) {
         }
 
 
     private:
-        SampleProcess1StubDefault *defaultStub_;
+        SampleProcess_1StubDefault *defaultStub_;
     };
 protected:
-    SampleProcess1StubDefault::RemoteEventHandler remoteEventHandler_;
+    SampleProcess_1StubDefault::RemoteEventHandler remoteEventHandler_;
 
 private:
 
@@ -96,4 +96,4 @@ private:
 // Compatibility
 namespace v1_0 = v1;
 
-#endif // V1_COMMONAPI_Sample_Process1_STUB_DEFAULT
+#endif // V1_COMMONAPI_Sample_Process_1_STUB_DEFAULT

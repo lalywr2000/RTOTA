@@ -1,7 +1,7 @@
 package commonapi
 
 
-interface SampleProcess0 {
+interface SampleProcess_0 {
   version {major 1 minor 0}
 
   method setInput {
@@ -14,7 +14,7 @@ interface SampleProcess0 {
   }
 }
 
-interface SampleProcess1 {
+interface SampleProcess_1 {
   version {major 1 minor 0}
 
   method setInput {

@@ -2,7 +2,7 @@ import "platform:/plugin/org.genivi.commonapi.someip/deployment/CommonAPI-4-SOME
 import "SampleProcess.fidl"
 
 
-define org.genivi.commonapi.someip.deployment for interface commonapi.SampleProcess0 {
+define org.genivi.commonapi.someip.deployment for interface commonapi.SampleProcess_0 {
         SomeIpServiceID = 1000
 
         method setInput {
@@ -10,13 +10,13 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.SampleProc
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
-        instance commonapi.SampleProcess0 {
-                InstanceId = "SampleProcess0"
+        instance commonapi.SampleProcess_0 {
+                InstanceId = "SampleProcess_0"
                 SomeIpInstanceID = 10000
         }
 }
 
-define org.genivi.commonapi.someip.deployment for interface commonapi.SampleProcess1 {
+define org.genivi.commonapi.someip.deployment for interface commonapi.SampleProcess_1 {
         SomeIpServiceID = 1001
 
         method setInput {
@@ -24,8 +24,8 @@ define org.genivi.commonapi.someip.deployment for interface commonapi.SampleProc
         }
 }
 define org.genivi.commonapi.someip.deployment for provider as Service {
-        instance commonapi.SampleProcess1 {
-                InstanceId = "SampleProcess1"
+        instance commonapi.SampleProcess_1 {
+                InstanceId = "SampleProcess_1"
                 SomeIpInstanceID = 10001
         }
 }

@@ -10,7 +10,7 @@ int main()
 
     runtime = CommonAPI::Runtime::get();
     SampleProcessService = std::make_shared<SampleProcessStubImpl>();
-    runtime->registerService("local", "SampleProcess", SampleProcessService);
+    runtime->registerService("local", "SampleProcess_", SampleProcessService);
 
     while (1) { }
 
