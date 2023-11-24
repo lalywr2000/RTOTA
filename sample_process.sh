@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sh process_controller.sh 1
+sh process_controller.sh 0
 
