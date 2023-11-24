@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd SampleProcess_0
 git clone -b SampleProcess https://github.com/lalywr2000/RTOTA.git
 
 cd RTOTA
