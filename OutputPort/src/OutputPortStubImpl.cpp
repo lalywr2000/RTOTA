@@ -10,21 +10,13 @@ OutputPortStubImpl::OutputPortStubImpl()
 
 OutputPortStubImpl::~OutputPortStubImpl() { }
 
-void OutputPortStubImpl::setInput(const std::shared_ptr<CommonAPI::ClientId> _client, uint8_t _input, setInputReply_t _return)
+void OutputPortStubImpl::setInput(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _input, setInputReply_t _return)
 {
-    std::cout << (int)_input << std::endl;
-
-    _return(std::to_string(_input));
-
-    return;
-}
-
-void OutputPortStubImpl::setPriority(const std::shared_ptr<CommonAPI::ClientId> _client, std::string _process_number, setPriorityReply_t _return)
-{
-    priority = _process_number.back() - 48;
-    priority_changed = true;
+    int temp = std::stoi(_input.substr(1));
     
-    _return("*** priority set to " + _process_number + " ***");
+    std::cout << temp << std::endl;
+
+    _return(std::to_string(temp));
 
     return;
 }
